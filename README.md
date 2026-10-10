@@ -2,7 +2,9 @@
 
 A practical guide to describing image edits: one change, an explicit preservation instruction, and a review checklist. Maintained by MinshengLiu, the operator of [Image to Image](https://imagetoimage.dev). This is an affiliated resource, not an independent review.
 
-**Current product status:** the website offers public guides, locally prepared image inputs and illustrative comparisons. Live AI generation is still in setup. Illustrations are editing concepts, not evidence of generated results. A sandbox payment is not a real purchase.
+**Try the editor:** [Upload an image and describe one edit](https://imagetoimage.dev/#editor). Live image editing is available with prompt, input-image and output-image screening. The site also offers public guides and illustrative comparisons; those illustrations are not a generated-results benchmark. [Pricing](https://imagetoimage.dev/pricing) is US$0.99 for 5 edits or US$14.99 for 100 edits, as one-time purchases without automatic renewal; applicable taxes are shown at checkout. Check the site for current trial availability and limits.
+
+This guide contains reusable prompt examples, not a claim that every example has been tested or that the model will preserve every detail. It is useful with image-to-image editors generally.
 
 ## A three-part instruction
 
@@ -43,6 +45,42 @@ Review whether the composition remains readable at the size you plan to share. D
 > Give the scene soft evening light from the right. Preserve the objects, their positions and surface colors. Keep the background readable and use gentle shadows rather than dramatic contrast.
 
 Inspect shadow direction and the relative brightness of surfaces. A plausible edit needs consistent light across the scene; a bright highlight on one object with the opposite shadow direction on another is a warning sign.
+
+## Change a background without changing the subject
+
+> Replace the busy background with a soft light-grey studio wall. Keep the ceramic vase, its shape, glaze, orientation and position unchanged. Preserve a natural contact shadow on the table.
+
+Check the rim, handle openings and small gaps around the subject. Generative background editing can also alter the subject: compare the silhouette against the original before publishing. For catalogue cutouts where exact edges matter, compare a dedicated background-removal workflow with a generative edit.
+
+See the [image background editing walkthrough](https://imagetoimage.dev/image-to-image/change-image-background).
+
+## Pencil sketch from a photo
+
+> Convert this building photo into a graphite pencil drawing on white paper. Preserve the perspective, roofline, window count and major outlines. Use light cross-hatching and keep the sky mostly blank.
+
+Count repeated windows and check straight lines. A sketch may look plausible while adding or removing structural details. Use it as an illustration rather than a measured architectural drawing.
+
+## Edit a room concept
+
+> Keep the room layout, doors, windows and furniture positions. Change the wall colour to warm off-white and the curtains to muted olive linen. Preserve the floor material and daylight direction.
+
+Start with surface finishes before attempting structural changes. Review paths through the room and door clearances; a generated room is a visual concept, not a construction plan. See [interior design image edits](https://imagetoimage.dev/image-to-image/interior-design-edit).
+
+## Change a short line of image text
+
+> In my original poster, replace “Summer Market” with “Autumn Market”. Keep the existing lettering style, colour and layout. Leave the date, logo and all other text unchanged.
+
+Read every character at full resolution after generation. If exact typography is essential, use a conventional design editor for the final lettering. Do not use text editing to forge documents, alter receipts or remove someone else's ownership mark. See [image text editing](https://imagetoimage.dev/image-to-image/image-text-editing).
+
+## Troubleshoot an edit
+
+| Problem | Next attempt | Review before use |
+| --- | --- | --- |
+| The whole scene changed | Ask for one named change and explicitly list what stays | Composition, object count and proportions |
+| A label became unreadable | Ask to preserve the label; use a conventional editor if exact text is critical | Every letter, number and logo |
+| Colours spread to other objects | Name the exact object and material instead of only a colour | Edges, reflections and neighbouring surfaces |
+| The result looks artificial | Specify one light direction and a soft grounded shadow | Contact shadows and highlight consistency |
+| The request was rejected | Remove prohibited or ambiguous requests; use a permitted source image | The service's content standards |
 
 ## Compare before downloading
 
