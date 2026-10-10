@@ -8,6 +8,17 @@ A practical guide to describing image edits: one change, an explicit preservatio
 
 This guide contains reusable prompt examples, not a claim that every example has been tested or that the model will preserve every detail. It is useful with image-to-image editors generally.
 
+## Use the editor without an account
+
+The free prompt builder above only assembles text and never uploads a photo. The linked [Image to Image editor](https://imagetoimage.dev/#editor) accepts JPG, PNG and WebP uploads and processes them on its servers. No product account is required.
+
+- One free trial edit per day is offered, subject to service capacity and content review.
+- Paid packs are **US$0.99 for 5 edits** or **US$14.99 for 100 edits**, before applicable checkout taxes. These are one-time purchases, with no subscription or automatic renewal.
+- One request uses one edit, with output up to 1024 pixels on the longest side. A preservation prompt does not guarantee unchanged product details.
+- Keep the purchase browser cookie and payment receipt. A different browser or cleared cookies may not show the balance; contact **liubrain39@gmail.com** with the receipt for missing credits or recovery. Do not send card details.
+
+See the [product-background access and pricing FAQ](https://imagetoimage.dev/image-to-image/product-photo-background#pricing-and-access) and check [current trial availability and prices](https://imagetoimage.dev/pricing) before paying. The real example below shows both the useful change and the details the model did not preserve.
+
 ## One real edit: a white chair in a green studio scene
 
 This example was generated through the public [Image to Image editor](https://imagetoimage.dev/#editor) on October 10, 2026: one request, one output, with the **Studio photo** style selected. The pictures below are the actual source and output, resized for display. This is an operator-produced example, not an independent benchmark.
