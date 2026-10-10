@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Image Editing Prompt Builder &amp; Review Checklist</title>
+  <meta name="description" content="Build a clear image-to-image editing prompt for product backgrounds, object colors, lighting, watercolor, room concepts or pencil sketches. Free, no signup.">
+  <link rel="canonical" href="https://liubrain39.github.io/image-to-image-prompt-guide/">
+  <meta property="og:title" content="Image Editing Prompt Builder">
+  <meta property="og:description" content="Name one change, say what stays, and copy a prompt you can use in an image editor.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://liubrain39.github.io/image-to-image-prompt-guide/">
+  <meta name="theme-color" content="#2456df">
+  <style>
+    :root{color-scheme:light;--ink:#17222b;--muted:#4a5b6c;--line:#d8e0e9;--blue:#2456df;--soft:#f4f7fc;--white:#fff}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--soft);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#1643ba;text-underline-offset:4px}a:hover{text-decoration-thickness:2px}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}:focus-visible{outline:3px solid #9b58df;outline-offset:4px}header,main,footer{max-width:1120px;margin:auto;padding:0 28px}header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}.brand span{color:var(--blue)}nav{display:flex;gap:22px;font-size:14px}.hero{padding:58px 0 30px;max-width:800px}.eyebrow{font-size:13px;color:#1643ba;letter-spacing:.09em;text-transform:uppercase;font-weight:750}h1{font-size:clamp(35px,5.4vw,58px);line-height:1.08;letter-spacing:-.055em;margin:14px 0 20px}h2{font-size:27px;line-height:1.25;letter-spacing:-.025em;margin:0 0 12px}h3{font-size:18px;margin:0 0 8px}p{margin:0 0 16px}.intro{font-size:19px;max-width:670px;color:var(--muted)}.small{font-size:14px;color:var(--muted)}.builder{display:grid;grid-template-columns:1fr 1fr;background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 32px #15244406}.inputs{padding:32px;border-right:1px solid var(--line)}.result{padding:32px;background:#eef3ff}.field{margin:0 0 18px}label{display:block;font-size:14px;font-weight:650;margin-bottom:6px}input,select,textarea{display:block;width:100%;border:1px solid #a6b5c8;border-radius:9px;padding:10px 12px;background:var(--white);color:var(--ink)}textarea{resize:vertical;min-height:74px}.prompt{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--white);padding:22px;border:1px solid #c1cee7;border-radius:12px;min-height:195px;font-size:17px;line-height:1.65}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin:18px 0 8px}button,.cta{border:0;border-radius:9px;cursor:pointer;font-weight:650;background:var(--blue);color:var(--white);padding:12px 17px;text-decoration:none;font-size:15px}button:hover,.cta:hover{background:#1943b8}.secondary{background:var(--white);color:#1643ba;border:1px solid #b3c1df}.secondary:hover{background:#e3ebff}.status{min-height:24px;font-size:14px;color:#214825;margin:0}.section{padding:48px 0;border-bottom:1px solid var(--line)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px}.number{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;background:#e4ecff;color:#1643ba;border-radius:50%;font-weight:700;margin-bottom:14px}.example{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:22px 0}figure{margin:0;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}figure img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:#f0f2f5}figcaption{font-size:14px;font-weight:650;padding:12px 18px}.note{border-left:3px solid var(--blue);padding:12px 18px;background:#eaf0ff}.checks{padding-left:22px}.checks li{margin-bottom:8px}details{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0}summary{font-weight:650;cursor:pointer}details p{margin:12px 0 0}footer{padding-top:30px;padding-bottom:36px;font-size:14px;color:var(--muted)}.footerlinks{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px}.skip{position:fixed;left:12px;top:-100px;padding:10px;background:#fff;z-index:10}.skip:focus{top:12px}
+    @media(max-width:760px){header,main,footer{padding-left:20px;padding-right:20px}header{align-items:flex-start}nav{gap:12px;flex-wrap:wrap;justify-content:flex-end;font-size:13px}.hero{padding-top:38px}.builder{grid-template-columns:1fr}.inputs{border-right:0;border-bottom:1px solid var(--line)}.inputs,.result{padding:24px}.steps{grid-template-columns:1fr}.example{gap:12px}figcaption{padding:10px;font-size:13px}.section{padding:34px 0}.prompt{min-height:0}}
+    @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Image Editing Prompt Builder","url":"https://liubrain39.github.io/image-to-image-prompt-guide/","applicationCategory":"DesignApplication","operatingSystem":"Web browser","description":"A free browser-based tool that assembles text instructions for image edits. It does not generate or upload images.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"MinshengLiu"}}</script>
+</head>
+<body>
+  <a class="skip" href="#builder">Skip to the prompt builder</a>
+  <header>
+    <a class="brand" href="#">image <span>→</span> instructions</a>
+    <nav aria-label="Main navigation"><a href="#real-example">Real example</a><a href="https://github.com/liubrain39/image-to-image-prompt-guide">Full guide</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Free prompt builder · no signup</p>
+      <h1>One change.<br>Clearer image instructions.</h1>
+      <p class="intro">Describe what should change, what must stay, and how the result should look. Copy the prompt into your image-to-image editor.</p>
+      <p class="small">This tool builds text in your browser. It does not generate images or upload photos.</p>
+    </section>
+    <section class="builder" id="builder" aria-label="Image editing prompt builder">
+      <form class="inputs" id="prompt-form">
+        <h2>Describe your edit</h2>
+        <div class="field"><label for="task">Editing task</label><select id="task"><option value="background">Product photo background</option><option value="color">Change an object color</option><option value="lighting">Change the lighting</option><option value="watercolor">Watercolor-style landscape</option><option value="room">Room design concept</option><option value="sketch">Photo to pencil sketch</option></select></div>
+        <div class="field"><label for="subject">Subject or scene</label><input id="subject" maxlength="120" value="the white metal chair" placeholder="For example: the ceramic vase" autocomplete="off"></div>
+        <div class="field"><label for="change" id="change-label">New background</label><input id="change" maxlength="200" value="a muted sage-green studio wall and pale cream floor" autocomplete="off"></div>
+        <div class="field"><label for="preserve">Details to preserve</label><textarea id="preserve" maxlength="300" rows="2" aria-describedby="preserve-help">its proportions, legs, seat, material and camera angle</textarea><span class="small" id="preserve-help">Match this list to your subject.</span></div>
+        <div class="field"><label for="finish">Finish or lighting</label><input id="finish" maxlength="200" value="soft daylight from the left and a natural contact shadow" autocomplete="off"></div>
+        <button type="button" class="secondary" id="reset">Reset this example</button>
+      </form>
+      <div class="result">
+        <p class="eyebrow">Your starting prompt</p>
+        <div class="prompt" id="prompt-output" role="region" aria-label="Generated prompt" tabindex="0"></div>
+        <div class="actions"><button id="copy" type="button">Copy prompt</button><a class="cta" href="https://imagetoimage.dev/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=prompt-builder#editor">Open the image editor →</a></div>
+        <p class="status" id="copy-status" role="status" aria-live="polite"></p>
+        <p class="small">Copy first, then paste into your chosen editor. These are instruction templates, not tested guarantees. A generative edit can change details you asked to preserve.</p>
+        <p class="small">The linked editor is operated by this guide’s author. One-time edit packs are available; current prices and trial availability are shown on <a href="https://imagetoimage.dev/pricing">its pricing page</a>.</p>
+        <noscript><p>Enable JavaScript to assemble a prompt, or use the static examples in the <a href="https://github.com/liubrain39/image-to-image-prompt-guide">full guide</a>.</p></noscript>
+      </div>
+    </section>
+    <section class="section">
+      <h2>A useful prompt has three parts</h2>
+      <div class="steps">
+        <article class="card"><span class="number">1</span><h3>Name one change</h3><p>Specify the object, surface, background or lighting to edit. Start with one task so you can see which instruction worked.</p></article>
+        <article class="card"><span class="number">2</span><h3>Say what stays</h3><p>Name the shape, material, layout, text or camera angle that matters. “Keep everything” is harder to inspect than a concrete list.</p></article>
+        <article class="card"><span class="number">3</span><h3>Review the output</h3><p>Compare each preservation instruction with the original. A plausible-looking result can still change a product or a room.</p></article>
+      </div>
+    </section>
+    <section class="section" id="real-example">
+      <p class="eyebrow">One request · one output</p>
+      <h2>A real background edit, including its mistakes</h2>
+      <p>We used the chair prompt above in the <a href="https://imagetoimage.dev/image-to-image/product-photo-background#real-example">Image to Image editor</a> with its Studio photo preset on October 10, 2026. These are the actual input and AI output, resized for display. This is an operator-produced example.</p>
+      <div class="example">
+        <figure><img src="assets/chair-source.webp" alt="Original white metal chair in front of a light-grey wall" width="960" height="720" loading="lazy" decoding="async"><figcaption>Original photograph</figcaption></figure>
+        <figure><img src="assets/chair-studio-result.webp" alt="Actual AI result: a white chair against a green studio wall and cream floor" width="960" height="720" loading="lazy" decoding="async"><figcaption>Actual AI output</figcaption></figure>
+      </div>
+      <p class="note">The backdrop and lighting changed as requested. The framing, seat edge and leg details also changed, despite the preservation instruction. Use this as a scene concept, and check the real product before publishing a catalogue image.</p>
+      <p class="small">Original photo: <a href="https://unsplash.com/photos/white-metal-chair-bxLhqZIp2LI">Ellen Qin on Unsplash</a>, under the <a href="https://unsplash.com/license">Unsplash License</a>. The generated output is not original photography. <a href="https://github.com/liubrain39/image-to-image-prompt-guide#one-real-edit-a-white-chair-in-a-green-studio-scene">Read the full prompt and preset notes</a>.</p>
+    </section>
+    <section class="section">
+      <h2>Before you use a generated product image</h2>
+      <ul class="checks"><li>Compare the silhouette, proportions and small parts with the original.</li><li>Read every letter and number on packaging, labels and logos.</li><li>Check contact shadows, reflections and the direction of light.</li><li>Review what changed outside the requested region.</li><li>Keep the original file. Label concept images when someone could mistake them for a real product.</li></ul>
+      <p>If the product must remain pixel-for-pixel identical, a conventional cutout and background editor is a better fit than a generative replacement.</p>
+    </section>
+    <section class="section">
+      <h2>Common questions</h2>
+      <details><summary>Does a preservation instruction guarantee unchanged details?</summary><p>No. The chair example shows that clear instructions can still change the subject. Inspect the actual result, especially product text, edges and repeated patterns.</p></details>
+      <details><summary>Which image editor can I use this prompt with?</summary><p>Use an image-to-image editor that accepts an existing photo and a text instruction. The templates are general starting points. The linked <a href="https://imagetoimage.dev/">Image to Image editor</a> is one option and is operated by this guide’s author.</p></details>
+      <details><summary>Are these six examples all verified?</summary><p>No. Only the chair example shown here has a documented input and actual output. The other task templates are suggested starting instructions and have not been presented as tested results.</p></details>
+      <details><summary>What happens to the text I enter?</summary><p>The builder assembles text locally in your browser. This page has no image upload, generation API or analytics script. Do not put confidential information into prompts you later submit to an external editor.</p></details>
+      <details><summary>Can this be used for face swaps or deepfakes?</summary><p>The linked service prohibits deepfakes, face swapping, face replacement, facial reenactment and impersonation. It also prohibits pornography/NSFW, violence/gore, hate speech, child-unsafe content/CSAM and copyright or trademark infringement. Use only images you have permission to edit. See its <a href="https://imagetoimage.dev/terms#content-standards">content standards</a>.</p></details>
+    </section>
+  </main>
+  <footer>
+    <p>Created by MinshengLiu, operator of <a href="https://imagetoimage.dev/">imagetoimage.dev</a>. This is an affiliated educational resource, not an independent review. It contains original guide content and a simple text builder; no private application code.</p>
+    <div class="footerlinks"><a href="https://github.com/liubrain39/image-to-image-prompt-guide">Source and full guide</a><a href="https://github.com/liubrain39/image-to-image-prompt-guide/issues">Suggest a correction</a><a href="https://imagetoimage.dev/guide">Image editing walkthrough</a><a href="https://imagetoimage.dev/privacy">Editor privacy policy</a></div>
+  </footer>
+  <script>
+    const presets={
+      background:{label:'New background',subject:'the white metal chair',change:'a muted sage-green studio wall and pale cream floor',preserve:'its proportions, legs, seat, material and camera angle',finish:'soft daylight from the left and a natural contact shadow'},
+      color:{label:'New color',subject:'the chair upholstery',change:'muted terracotta',preserve:'its texture, seams and shape, plus the background and lighting',finish:'natural color and realistic material detail'},
+      lighting:{label:'Desired light',subject:'the scene',change:'soft evening light from the right',preserve:'the objects, positions and surface colors',finish:'gentle shadows and a readable background'},
+      watercolor:{label:'Medium and palette',subject:'the landscape',change:'a watercolor study with restrained blue-green tones',preserve:'the horizon, building positions and main shapes',finish:'soft washes and visible paper texture'},
+      room:{label:'Surface changes',subject:'the room',change:'warm off-white walls and muted olive linen curtains',preserve:'the layout, doors, windows, furniture positions and floor material',finish:'consistent natural daylight'},
+      sketch:{label:'Drawing medium',subject:'the building photo',change:'a graphite pencil drawing on white paper',preserve:'the perspective, roofline, window count and major outlines',finish:'light cross-hatching and a mostly blank sky'}
+    };
+    const form=document.getElementById('prompt-form');
+    const task=document.getElementById('task');
+    const subject=document.getElementById('subject');
+    const change=document.getElementById('change');
+    const preserve=document.getElementById('preserve');
+    const finish=document.getElementById('finish');
+    const output=document.getElementById('prompt-output');
+    const status=document.getElementById('copy-status');
+    function update(){
+      const s=subject.value.trim()||'the main subject';
+      const c=change.value.trim();
+      let instruction='Describe the single change you want to make to '+s+'.';
+      if(c){
+        if(task.value==='background')instruction='Keep '+s+' recognizable. Replace the background with '+c+'.';
+        else if(task.value==='color')instruction='Change only '+s+' to '+c+'.';
+        else if(task.value==='lighting')instruction='Give '+s+' '+c+'.';
+        else if(task.value==='room')instruction='In '+s+', change only the following surfaces: '+c+'.';
+        else instruction='Render '+s+' as '+c+'.';
+      }
+      if(preserve.value.trim())instruction+=' Preserve '+preserve.value.trim()+'.';
+      if(finish.value.trim())instruction+=' Use '+finish.value.trim()+'.';
+      instruction+=' Do not add unrelated objects, text or logos.';
+      output.textContent=instruction;
+      status.textContent='';
+    }
+    function reset(){const p=presets[task.value];subject.value=p.subject;change.value=p.change;preserve.value=p.preserve;finish.value=p.finish;document.getElementById('change-label').textContent=p.label;update()}
+    form.addEventListener('submit',event=>event.preventDefault());
+    form.addEventListener('input',update);
+    task.addEventListener('change',reset);
+    document.getElementById('reset').addEventListener('click',reset);
+    document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(output.textContent);status.textContent='Prompt copied. Paste it into your image editor.'}catch{status.textContent='Copy is unavailable here. Select the prompt text and copy it manually.'}});
+    reset();
+  </script>
+</body>
+</html>

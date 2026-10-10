@@ -2,6 +2,8 @@
 
 A practical guide to describing image edits: one change, an explicit preservation instruction, and a review checklist. Maintained by MinshengLiu, the operator of [Image to Image](https://imagetoimage.dev). This is an affiliated resource, not an independent review.
 
+**Free interactive resource:** [Image Editing Prompt Builder](https://liubrain39.github.io/image-to-image-prompt-guide/) assembles an editing instruction from one requested change and the details to preserve. It runs in the browser without uploading a photo or calling an AI model. The six templates are starting points; only the chair example below has a documented input and actual output.
+
 **Try the editor:** [Upload an image and describe one edit](https://imagetoimage.dev/#editor). Live image editing is available with prompt, input-image and output-image screening. The site also offers public guides and illustrative comparisons; those illustrations are not a generated-results benchmark. [Pricing](https://imagetoimage.dev/pricing) is US$0.99 for 5 edits or US$14.99 for 100 edits, as one-time purchases without automatic renewal; applicable taxes are shown at checkout. Check the site for current trial availability and limits.
 
 This guide contains reusable prompt examples, not a claim that every example has been tested or that the model will preserve every detail. It is useful with image-to-image editors generally.
