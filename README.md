@@ -6,6 +6,32 @@ A practical guide to describing image edits: one change, an explicit preservatio
 
 This guide contains reusable prompt examples, not a claim that every example has been tested or that the model will preserve every detail. It is useful with image-to-image editors generally.
 
+## One real edit: a white chair in a green studio scene
+
+This example was generated through the public [Image to Image editor](https://imagetoimage.dev/#editor) on October 10, 2026: one request, one output, with the **Studio photo** style selected. The pictures below are the actual source and output, resized for display. This is an operator-produced example, not an independent benchmark.
+
+| Source photograph | Actual AI output |
+| --- | --- |
+| ![Original white chair against a light grey wall](assets/chair-source.webp) | ![AI-generated green studio wall and cream floor around a white chair](assets/chair-studio-result.webp) |
+
+**Source photograph:** [Ellen Qin on Unsplash](https://unsplash.com/photos/white-metal-chair-bxLhqZIp2LI). The source photograph remains subject to the [Unsplash License](https://unsplash.com/license); it is not original photography by this repository's author. The output is AI-generated.
+
+**Instruction entered:**
+
+> Keep the white metal chair, its proportions, legs, seat and camera angle unchanged. Replace the background with a muted sage-green studio wall and a pale cream floor. Add soft daylight from the left and a natural contact shadow beneath the chair. Do not add text, logos, people or extra furniture.
+
+**Style setting:** Studio photo. The preset additionally requests professional studio lighting, a clean neutral background, realistic detail and preservation of the main subject.
+
+**What the result actually shows:**
+
+- The background changed to green, the floor became cream, and the model added side lighting and a grounded shadow.
+- The chair remains recognizable, but its framing, seat edge and leg details changed. The instruction did **not** preserve every product detail.
+- This is useful as a scene concept. It should not be treated as a faithful catalogue photograph without checking it against the actual product.
+
+**What to check on your own image:** compare the silhouette, proportions, material, readable labels and shadow direction separately. If the product itself must remain pixel-for-pixel identical, a conventional background cutout is a better fit than a generative replacement. Another input or another run may produce a different result.
+
+The [interactive comparison and case notes](https://imagetoimage.dev/image-to-image/product-photo-background#real-example) show the same example on the website. The remaining recipes below are starting points, not additional verified test results.
+
 ## A three-part instruction
 
 1. Name the change: the object, region, background or lighting that should differ.
