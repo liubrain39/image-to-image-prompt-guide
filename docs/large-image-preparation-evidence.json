@@ -1,0 +1,55 @@
+{
+  "measurementTimeBeijing": "2026-10-11T01:00:44.176013+08:00",
+  "site": "https://imagetoimage.dev/",
+  "releasePublicRevision": "42f4714529da",
+  "operator": "MinshengLiu",
+  "affiliationDisclosed": true,
+  "controlledSyntheticFixture": {
+    "synthetic": true,
+    "width": 8000,
+    "height": 6000,
+    "bytes": 759754
+  },
+  "desktopViewport": {
+    "width": 1040,
+    "height": 797
+  },
+  "beforeObservedUploadLongTaskMs": 91,
+  "afterPreparedImage": {
+    "width": 1536,
+    "height": 1152,
+    "elapsedMs": 429.7,
+    "observedMainThreadLongTasks": [],
+    "workerReturnedBlob": true,
+    "busyStateObserved": true
+  },
+  "separateFreshPageLcpMs": 1008,
+  "largestObservedInteractionEntryMs": 64,
+  "mobileViewport": {
+    "width": 390,
+    "height": 793,
+    "sourceLoaded": true,
+    "sourceWidth": 1400,
+    "sourceHeight": 788,
+    "horizontalOverflow": false,
+    "error": null
+  },
+  "fallback": {
+    "workerDisabledForCheck": true,
+    "roomSamplePrepared": true,
+    "workerRestored": true
+  },
+  "applicationChecks": {
+    "testsPassed": 78,
+    "buildPassed": true,
+    "typecheckPassed": true
+  },
+  "costUsd": 0,
+  "newGenerationOrPaymentSubmitted": false,
+  "limitations": [
+    "One controlled browser observation is not a real-user performance distribution.",
+    "Synthetic checkerboard compression is not representative of all camera photos.",
+    "The LCP observation does not establish a before/after improvement from the worker.",
+    "Historical Clarity collection anomaly cause remains unconfirmed."
+  ]
+}

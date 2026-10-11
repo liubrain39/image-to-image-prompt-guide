@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Preparing a 48MP Photo for an Image-to-Image Editor: A Web Worker Case Study</title>
+  <meta name="description" content="A measured 48MP image preparation case: move decoding, resizing and JPEG encoding to a Web Worker, keep a browser fallback, and distinguish local timings from real-user INP.">
+  <link rel="canonical" href="https://liubrain39.github.io/image-to-image-prompt-guide/large-image-preparation.html">
+  <meta property="og:title" content="Preparing a 48MP Photo Without Blocking the Editor">
+  <meta property="og:description" content="A reproducible local fixture, measured results, compatibility checks and limitations from Image to Image.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://liubrain39.github.io/image-to-image-prompt-guide/large-image-preparation.html">
+  <meta name="theme-color" content="#2456df">
+  <style>
+    :root{color-scheme:light;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17222b;background:#f4f7fc;line-height:1.65}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:860px;margin:auto;padding:24px}header,footer{font-size:14px}a{color:#1643ba;text-underline-offset:4px;overflow-wrap:anywhere}:focus-visible{outline:3px solid #9b58df;outline-offset:4px}h1{font-size:clamp(32px,5vw,48px);line-height:1.12;letter-spacing:-.04em;margin:18px 0}h2{font-size:25px;line-height:1.25;margin:36px 0 14px}p{margin:0 0 18px}.meta{color:#4a5b6c;font-size:14px}.note{background:#eaf0ff;border-left:3px solid #2456df;padding:16px 20px}.table-wrap{overflow-x:auto;background:white;border:1px solid #d8e0e9;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:15px}th,td{text-align:left;padding:12px;border-bottom:1px solid #d8e0e9;vertical-align:top}th{background:#eef3ff}code{background:#e9eef7;padding:1px 4px;border-radius:3px;overflow-wrap:anywhere}li{margin:9px 0}footer{border-top:1px solid #d8e0e9;margin-top:36px}nav{display:flex;flex-wrap:wrap;gap:20px}.skip{position:absolute;top:-100px}.skip:focus{top:10px}@media(max-width:540px){header,main,footer{padding:20px}th,td{padding:9px;font-size:14px}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Preparing a 48MP Photo for an Image-to-Image Editor: A Web Worker Case Study","description":"A measured local image-preparation case with a synthetic 48MP input, worker processing and a browser fallback.","author":{"@type":"Person","name":"MinshengLiu"},"datePublished":"2026-10-11","url":"https://liubrain39.github.io/image-to-image-prompt-guide/large-image-preparation.html","inLanguage":"en"}</script>
+</head>
+<body>
+  <a class="skip" href="#article">Skip to the case study</a>
+  <header><nav aria-label="Resource navigation"><a href="./">Free image-editing prompt builder</a><a href="https://github.com/liubrain39/image-to-image-prompt-guide">Source and guide</a></nav></header>
+  <main id="article">
+    <article>
+      <p class="meta">Engineering case · measured October 11, 2026, Beijing time</p>
+      <h1>Preparing a 48MP photo without blocking the editor</h1>
+      <p>Uploading a photo has work to do before an AI request starts: decode the source, resize it, and encode a smaller image. On the <a href="https://imagetoimage.dev/?utm_source=github-pages&amp;utm_medium=referral&amp;utm_campaign=large-image-case#editor">Image to Image editor</a>, a synthetic 8000 × 6000 JPEG exposed a 91ms main-thread long task during that preparation. Moving the image work to a dedicated Web Worker removed long tasks of 50ms or more in the same upload check.</p>
+      <p class="note">Disclosure: MinshengLiu operates the linked editor. This is an operator-produced engineering case, written with AI assistance from recorded implementation and browser checks. It is not an independent benchmark, a claim about all devices, or a promise of search rankings.</p>
+
+      <h2>Pixels and file size tell different stories</h2>
+      <p>The fixture was a locally generated two-colour checkerboard, encoded as JPEG at quality 0.85. It had 48 million pixels but occupied only 759,754 bytes because its pattern compressed well. A small file can still expand into a large bitmap; an RGBA representation of that size alone is about 192MB, before other buffers. This fixture exercises large dimensions, not the variety or encoding complexity of ordinary camera photographs.</p>
+      <p>The editor prepared a 1536 × 1152 JPEG at quality 0.86. The original pixel limit, prepared-image dimensions and encoding quality were retained in this change. The prepared upload size is separate from the AI output limit: the linked service currently produces an output up to 1024 pixels on the longest side.</p>
+
+      <h2>What moved off the main thread</h2>
+      <ol>
+        <li>The UI immediately enters a “Preparing image…” state and prevents conflicting remove, preset or generation actions while preparation is running.</li>
+        <li>A worker decodes the image using <code>createImageBitmap</code>, checks the existing source-pixel limit, and computes a scale that does not enlarge a small input.</li>
+        <li>The worker draws onto an <code>OffscreenCanvas</code>, with a white background for this JPEG workflow, and calls <code>convertToBlob</code>. Transparency is deliberately flattened; this is not a transparent-PNG export.</li>
+        <li>The bitmap is closed and the worker is terminated after it returns. The UI receives the prepared Blob and displays the source preview.</li>
+        <li>If workers or the required decoder/canvas path are unavailable, the editor uses its existing browser image/canvas fallback and asynchronous encoding path. A worker moves work; it does not eliminate decoding cost or guarantee faster results on every device.</li>
+      </ol>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/convertToBlob">MDN documents <code>OffscreenCanvas.convertToBlob</code> in workers</a>, including its format support and failure cases. Feature detection and a fallback still matter.</p>
+
+      <h2>What the browser check measured</h2>
+      <div class="table-wrap"><table><caption>One desktop browser check, viewport 1040 × 797</caption><thead><tr><th scope="col">Measurement</th><th scope="col">Observed result</th></tr></thead><tbody>
+        <tr><th scope="row">Source fixture</th><td>8000 × 6000 synthetic JPEG, 759,754 bytes</td></tr>
+        <tr><th scope="row">Main-thread upload task before</th><td>91ms long task</td></tr>
+        <tr><th scope="row">Main-thread upload tasks after</th><td>No observed task of 50ms or more during the checked preparation interval</td></tr>
+        <tr><th scope="row">Prepared image after</th><td>1536 × 1152; displayed after about 430ms</td></tr>
+        <tr><th scope="row">Largest observed interaction entry</th><td>64ms across the checked preset, details and comparison interactions</td></tr>
+        <tr><th scope="row">Fresh page LCP</th><td>1008ms; recorded separately from the upload</td></tr>
+      </tbody></table></div>
+      <p class="meta">These are observations from one controlled check, not repeated-run distributions. The 64ms value is not a population INP result. The LCP measurement does not establish that the worker changed first-load performance.</p>
+      <p>The 390px-wide browser check loaded a public sample and preset without horizontal overflow. Disabling the Worker API for a separate compatibility check still prepared a 1400 × 788 room sample through the fallback. No paid generation or payment was made for these checks.</p>
+      <p>The application’s 78 tests, lint, production build and type checks passed. Those checks support this release; they do not establish the performance of every browser, network or photograph.</p>
+
+      <h2>How to repeat a useful upload check</h2>
+      <ol>
+        <li>Record the input’s dimensions and bytes separately. Keep an unchanged source for before/after runs, and include realistic photos as well as a controlled fixture.</li>
+        <li>Observe <code>longtask</code> entries on the main page and start a timestamp immediately before the file-change event. Record when the prepared preview is actually ready.</li>
+        <li>Confirm the worker returned the prepared Blob. Check that the busy state appeared and that errors remain visible when decoding fails.</li>
+        <li>Try the editor’s ordinary controls after preparation, then test an unsupported-worker path. Avoid quietly removing safety limits to make a benchmark pass.</li>
+        <li>Collect new real-user performance data across supported devices. Do not replace a field measurement with one local interaction duration.</li>
+      </ol>
+
+      <h2>What this does not prove</h2>
+      <p>An older Clarity report contained a very large interaction duration inconsistent with the reported length of that session. Its collection cause remains unconfirmed. This upload change does not repair or erase historical analytics. <a href="https://web.dev/articles/inp">Google’s INP guide</a> explains the page-level responsiveness metric and why real-user evaluation matters.</p>
+      <p>Local image preparation also does not mean generation is local. Selecting a file prepares its bytes in the browser; submitting an edit sends the prepared image to the linked service for prompt, source-image, generation and output review. Read the editor’s <a href="https://imagetoimage.dev/privacy">privacy policy</a> before uploading a photo.</p>
+      <p>For the creative side of the workflow, the <a href="./">free prompt builder</a> helps state one requested change and the details to preserve. The <a href="https://imagetoimage.dev/image-to-image/product-photo-background#real-example">actual product-background example</a> shows why the generated output still needs review: even a clear instruction changed chair details.</p>
+      <p class="meta">A compact, non-personal <a href="large-image-preparation-evidence.json">measurement record</a> accompanies this article. No source photographs, prompts from visitors, account credentials or private application code are included.</p>
+    </article>
+  </main>
+  <footer><p>An affiliated educational resource from MinshengLiu, operator of imagetoimage.dev. Corrections are welcome through the <a href="https://github.com/liubrain39/image-to-image-prompt-guide/issues">resource repository</a>.</p></footer>
+</body>
+</html>
