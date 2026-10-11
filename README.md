@@ -21,6 +21,29 @@ The free prompt builder above only assembles text and never uploads a photo. The
 
 See the [product-background access and pricing FAQ](https://imagetoimage.dev/image-to-image/product-photo-background#pricing-and-access) and check [current trial availability and prices](https://imagetoimage.dev/pricing) before paying. The real example below shows both the useful change and the details the model did not preserve.
 
+## Conversational image editing: keep one evolving brief
+
+The linked [Image to Image editor](https://imagetoimage.dev/#editor) now offers a text assistant alongside its image workflow. This differs from the standalone free builder: the builder assembles text locally, while the assistant calls a model to refine one brief over multiple conversation turns. The assistant does not inspect image pixels and does not silently generate an image.
+
+A three-turn brief was checked with real assistant responses on 11 October 2026:
+
+| Follow-up | What the next brief kept or replaced |
+| --- | --- |
+| Use a light sage background and soft warm light; preserve the chair color and shape | Sage green, warm light, chair color and shape |
+| Change the background to light blue; keep the rest | Blue replaces sage; chair and warm light remain |
+| Cancel blue and return to sage green | Sage returns; chair and warm light remain |
+
+These are verified **text-brief updates**, not three generated pictures or a claim of exact product preservation.
+
+1. Upload a source or select a public sample, then describe what to change and what to keep.
+2. Add or replace requirements in the same conversation and read the editable brief before generating.
+3. After a result, choose **Original** for a fresh direction or a completed **Version** to continue from that reviewed result.
+4. Generate explicitly, compare the details, and download the version you want to keep.
+
+Chat uses no image edits; each new generated image uses one edit. The current chat and version list live only in the open tab and clear on refresh. This is not persistent project storage. Current trial availability, capacity and one-time packs are shown on the website.
+
+See the [conversation workflow with a verified workspace screenshot](https://imagetoimage.dev/guide#conversational-editing). It includes one generated chair scene and explains both what was tested and what was not. This remains an affiliated resource maintained by the product's operator.
+
 ## One real edit: a white chair in a green studio scene
 
 This example was generated through the public [Image to Image editor](https://imagetoimage.dev/#editor) on October 10, 2026: one request, one output, with the **Studio photo** style selected. The pictures below are the actual source and output, resized for display. This is an operator-produced example, not an independent benchmark.
