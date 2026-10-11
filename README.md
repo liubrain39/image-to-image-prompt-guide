@@ -6,7 +6,7 @@ A practical guide to describing image edits: one change, an explicit preservatio
 
 **Engineering case:** [Preparing a 48MP photo without blocking the editor](https://liubrain39.github.io/image-to-image-prompt-guide/large-image-preparation.html) documents a synthetic upload fixture, Web Worker image preparation, compatibility checks and measurement limits. The accompanying record contains no visitor images or private application code; one browser check is not a real-user performance distribution.
 
-**Try the editor:** [Upload an image and describe one edit](https://imagetoimage.dev/#editor). Live image editing is available with prompt, input-image and output-image screening. The site also offers public guides and illustrative comparisons; those illustrations are not a generated-results benchmark. [Pricing](https://imagetoimage.dev/pricing) is US$0.99 for 5 edits or US$14.99 for 100 edits, as one-time purchases without automatic renewal; applicable taxes are shown at checkout. Check the site for current trial availability and limits.
+**Try the editor:** [Upload an image and describe one edit](https://imagetoimage.dev/#editor). Live image editing is available with prompt, input-image and output-image screening. The site also offers public guides and illustrative comparisons; those illustrations are not a generated-results benchmark. [Pricing](https://imagetoimage.dev/pricing) is US$14.99 for 100 edits, as a one-time purchase without automatic renewal; applicable taxes are shown at checkout. Check the site for current trial availability and limits.
 
 This guide contains reusable prompt examples, not a claim that every example has been tested or that the model will preserve every detail. It is useful with image-to-image editors generally.
 
@@ -15,7 +15,7 @@ This guide contains reusable prompt examples, not a claim that every example has
 The free prompt builder above only assembles text and never uploads a photo. The linked [Image to Image editor](https://imagetoimage.dev/#editor) accepts JPG, PNG and WebP uploads and processes them on its servers. No product account is required.
 
 - One free trial edit per day is offered, subject to service capacity and content review.
-- Paid packs are **US$0.99 for 5 edits** or **US$14.99 for 100 edits**, before applicable checkout taxes. These are one-time purchases, with no subscription or automatic renewal.
+- The paid pack is **US$14.99 for 100 edits**, before applicable checkout taxes. This is a one-time purchase, with no subscription or automatic renewal.
 - One request uses one edit, with output up to 1024 pixels on the longest side. A preservation prompt does not guarantee unchanged product details.
 - Keep the purchase browser cookie and payment receipt. A different browser or cleared cookies may not show the balance; contact **liubrain39@gmail.com** with the receipt for missing credits or recovery. Do not send card details.
 
