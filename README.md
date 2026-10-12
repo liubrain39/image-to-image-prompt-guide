@@ -10,6 +10,12 @@ A practical guide to describing image edits: one change, an explicit preservatio
 
 This guide contains reusable prompt examples, not a claim that every example has been tested or that the model will preserve every detail. It is useful with image-to-image editors generally.
 
+## Prepare a background prompt directly in the editor
+
+The [background-change prompt builder](https://imagetoimage.dev/image-to-image/change-image-background) offers white, cream, green and outdoor scene starters. Choose the backdrop, ground or surface, and light direction, then click **Use this instruction**. It fills the editable prompt before you explicitly generate. Loading the sample keeps an applied background brief.
+
+This browser-side step does not analyze a photo, call an AI model or use an edit credit. Subject-preservation wording is a request, not a guarantee. Compare the source and output; use a conventional cutout when foreground pixels must remain unchanged.
+
 ## Use the editor without an account
 
 The free prompt builder above only assembles text and never uploads a photo. The linked [Image to Image editor](https://imagetoimage.dev/#editor) accepts JPG, PNG and WebP uploads and processes them on its servers. No product account is required.
