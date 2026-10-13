@@ -16,16 +16,13 @@ The [background-change prompt builder](https://imagetoimage.dev/image-to-image/c
 
 This browser-side step does not analyze a photo, call an AI model or use an edit credit. Subject-preservation wording is a request, not a guarantee. Compare the source and output; use a conventional cutout when foreground pixels must remain unchanged.
 
-## Use the editor without an account
+## Prepare a brief, then sign in to generate
 
-The free prompt builder above only assembles text and never uploads a photo. The linked [Image to Image editor](https://imagetoimage.dev/#editor) accepts JPG, PNG and WebP uploads and processes them on its servers. No product account is required.
+The free prompt builder above assembles text without uploading a photo or calling an AI model. On [Image to Image](https://imagetoimage.dev/#editor), you can prepare a brief without an account; image generation now requires sign-in. This corrects this guide's earlier no-account-generation wording after the product's account update.
 
-- One free trial edit per day is offered, subject to service capacity and content review.
-- The paid pack is **US$14.99 for 100 edits**, before applicable checkout taxes. This is a one-time purchase, with no subscription or automatic renewal.
-- One request uses one edit, with output up to 1024 pixels on the longest side. A preservation prompt does not guarantee unchanged product details.
-- Keep the purchase browser cookie and payment receipt. A different browser or cleared cookies may not show the balance; contact **liubrain39@gmail.com** with the receipt for missing credits or recovery. Do not send card details.
+The one-time pack remains **US$14.99 for 100 edits**, before applicable checkout taxes, with no automatic renewal. Check [current trial availability and pricing](https://imagetoimage.dev/pricing) before paying. Keep the receipt and use the site's account and recovery instructions if your balance is missing; never send card details.
 
-See the [product-background access and pricing FAQ](https://imagetoimage.dev/image-to-image/product-photo-background#pricing-and-access) and check [current trial availability and prices](https://imagetoimage.dev/pricing) before paying. The real example below shows both the useful change and the details the model did not preserve.
+Compare the result with the original before using it. One request uses one edit, with output up to 1024 pixels on the longest side; a preservation instruction does not guarantee unchanged details. The [product-background FAQ](https://imagetoimage.dev/image-to-image/product-photo-background#pricing-and-access) now states the sign-in requirement.
 
 ## Conversational image editing: keep one evolving brief
 
